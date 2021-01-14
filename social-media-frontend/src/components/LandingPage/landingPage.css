@@ -1,5 +1,5 @@
 .jumbotron {
-    margin-top: 12em;
+    margin-top: 10em;
     background-image: linear-gradient(purple, darkblue);
     color: white;
 }
@@ -11,4 +11,16 @@ position:absolute;
 left:0;
 bottom:0;
 right:0;
+}
+
+.sign_in_form, .or {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+
+input {
+    width: 20%;
 }
