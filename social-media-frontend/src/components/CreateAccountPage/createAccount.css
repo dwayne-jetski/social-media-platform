@@ -3,3 +3,11 @@
     background-image: linear-gradient(purple, darkblue);
     color: white;
 }
+
+.create_account_form, .or {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}

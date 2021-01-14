@@ -29,27 +29,31 @@ function CreateAccount(){
     const {values, handleChange, handleSubmit } = useForm(register);
 
     return(
-        <Row>
-            <Col xs={3} />
-            <Col xs={6} className="jumbotron">                
-                <Form onSubmit={handleSubmit}>
-                    <Form.Label>Email Address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleChange} value={values.email} required={true}/>
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control type="username" placeholder="Enter username" name="userName" onChange={handleChange} value={values.userName} required={true}/>
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control type="firstName" placeholder="Enter first name" name="firstName" onChange={handleChange} value={values.firstName} required={true}/>
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control type="lastName" placeholder="Enter last name" name="lastName" onChange={handleChange} value={values.lastName} required={true}/>
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Enter password 8-32 characters long" name="password" onChange={handleChange} value={values.password} required={true}/>
-                    <Form.Label className={values.textColor}>Confirm Password</Form.Label>
-                    <Form.Control type="password" placeholder="Confirm your password" name="confirmPassword" onChange={handleChange} value={values.confirmPassword} required={true}/>
-                    <Button type="submit">Register</Button>
-                </Form>
-            </Col>
-            <Col xs={3}/>
-        </Row>
+        <React.Fragment>
+            <Row className="jumbotron" >
+                <Col xs={3} />
+                <Col xs={6} className="create_account_form"> 
+                    
+                    <Col >               
+                        <Form onSubmit={handleSubmit}>
+                            <Form.Label>Email Address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleChange} value={values.email} required={true}/>
+                            <Form.Label>Username</Form.Label>
+                            <Form.Control type="username" placeholder="Enter username" name="userName" onChange={handleChange} value={values.userName} required={true}/>
+                            <Form.Label>First Name</Form.Label>
+                            <Form.Control type="firstName" placeholder="Enter first name" name="firstName" onChange={handleChange} value={values.firstName} required={true}/>
+                            <Form.Label>Last Name</Form.Label>
+                            <Form.Control type="lastName" placeholder="Enter last name" name="lastName" onChange={handleChange} value={values.lastName} required={true}/>
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Enter password 8-32 characters long" name="password" onChange={handleChange} value={values.password} required={true}/>
+                            <Form.Label className={values.textColor}>Confirm Password</Form.Label>
+                            <Form.Control type="password" placeholder="Confirm your password" name="confirmPassword" onChange={handleChange} value={values.confirmPassword} required={true}/>
+                            <Button type="submit">Register</Button>
+                        </Form>
+                    </Col>
+                </Col>
+            </Row>
+        </React.Fragment>
             
             
         
