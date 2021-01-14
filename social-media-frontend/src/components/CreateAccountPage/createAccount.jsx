@@ -14,6 +14,16 @@ function CreateAccount(){
 
     return(
         <div>
+            <Col xs={3}/>
+            <Col xs={6}>
+                <div>
+                    <h1>
+                        Hello World
+                    </h1>
+                </div>
+            </Col>
+            <Col xs={3}/>
+            
             
         </div>
     );

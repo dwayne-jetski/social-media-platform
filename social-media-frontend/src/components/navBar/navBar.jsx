@@ -12,8 +12,6 @@ function NavBar(){
 
 
 
-
-
     return(
         <div>
             <Navbar bg="dark" variant="dark">
