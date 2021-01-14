@@ -7,25 +7,26 @@ import {Col, Row} from 'react-bootstrap';
 import useForm from '../useForm/useForm';
 
 
-function CreateAccount(){
+function CreateAccount(){    
 
-    const register = () =>{
-        console.log("Email: ", values.email)
-        console.log("User Name: ", values.userName)
-        console.log('First Name: ', values.firstName)
-        console.log('Last Name: ', values.lastName)
-        console.log("Password: ", values.password)
+    const register = (textColor) =>{
+        console.log("Email: ", values.email);
+        console.log("User Name: ", values.userName);
+        console.log('First Name: ', values.firstName);
+        console.log('Last Name: ', values.lastName);
+        console.log("Password: ", values.password);
+        console.log("Password Confirmation: ", values.confirmPassword);
 
         if(values.password === values.confirmPassword){
             alert(`Thanks for registering! Check your email ${values.email} for confirmation`);            
         } else if(values.pasword !== values.confirmPassword){
             alert('your passwords do not match')
+           
         }
 
     }
 
     const {values, handleChange, handleSubmit } = useForm(register);
-
 
     return(
         <Row>
@@ -42,7 +43,7 @@ function CreateAccount(){
                     <Form.Control type="lastName" placeholder="Enter last name" name="lastName" onChange={handleChange} value={values.lastName} required={true}/>
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Enter password 8-32 characters long" name="password" onChange={handleChange} value={values.password} required={true}/>
-                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Label className={values.textColor}>Confirm Password</Form.Label>
                     <Form.Control type="password" placeholder="Confirm your password" name="confirmPassword" onChange={handleChange} value={values.confirmPassword} required={true}/>
                     <Button type="submit">Register</Button>
                 </Form>
