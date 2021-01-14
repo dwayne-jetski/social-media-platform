@@ -12,7 +12,8 @@ function App() {
     <div className="App">
 
       <NavBar/>
-      <LandingPage/>
+      
+      <CreateAccount/>
     
     </div>
   );
