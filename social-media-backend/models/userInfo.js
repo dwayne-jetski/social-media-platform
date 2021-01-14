@@ -19,3 +19,8 @@ const profileDate = new mongoose.Schema({
     dislikedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
     profilePic: { default: null}
 })
+
+
+const userInfo = mongoose.model('userInfo', userInfoSchema);
+
+module.exports = userInfo;
