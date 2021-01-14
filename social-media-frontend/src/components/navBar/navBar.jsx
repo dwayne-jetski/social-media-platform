@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'react-bootstrap';
-import Navbar from 'react-bootstrap/navbar';
+import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl'

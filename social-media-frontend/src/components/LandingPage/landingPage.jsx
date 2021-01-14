@@ -6,13 +6,18 @@ const LandingPage = () => {
     return(
         <div>
             <div className="jumbotron">
-                <h1 className="display-4">Hello, welcome to MusicApp!</h1>
-                    <p className="lead">MusicApp is a great way to connect with other artist and music enthusiasts like yourself.</p>
+                <h1 className="display-4">Welcome to MusicApp!</h1>
+                    <p className="lead">Connect with other music enthusiasts like yourself.</p>
                     <hr Name="my-4"/>
-                    <p>Sign up now to start sharing your favorite tunes with others and enhance your playlist.</p>
-                    <p className="lead">
-                        <a className="btn btn-outline-primary btn-lg" href="#" role="button">I'm in!</a>
-                    </p>
+                    <p>Log in now to start sharing your favorite tunes.</p>
+                    <form className="sign_in_form container">
+                        <input className="m-1" placeholder="email"></input>
+                        <input placeholder="password"></input>
+                        <button className="btn btn-outline-primary btn-md m-2">Log in</button>
+                    </form>
+                    <span className="or">or</span>
+                    <hr Name="my-4"/>
+                    <a className="btn-outline-primary btn-sm" href="#">Sign up</a>
             </div>
 
             <footer class="py-3 bg-light">
