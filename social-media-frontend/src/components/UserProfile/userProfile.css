@@ -1,0 +1,17 @@
+.profile {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile_card {
+    margin-left: 10em;
+    background-image: linear-gradient(purple, darkblue);
+}
+
+.profile {
+    margin-top: 6em;
+}
+
+.m-2 {
+    color: white;
+}

@@ -6,9 +6,9 @@ import {Col, Row} from 'react-bootstrap';
 import useForm from '../useForm/useForm';
 
 
-function CreateAccount(){    
+function CreateAccount(props){    
 
-    const register = (textColor) =>{
+    const register = () =>{
         console.log("Email: ", values.email);
         console.log("User Name: ", values.userName);
         console.log('First Name: ', values.firstName);
@@ -18,6 +18,8 @@ function CreateAccount(){
 
         if(values.password === values.confirmPassword){
             alert(`Thanks for registering! Check your email ${values.email} for confirmation`);            
+        
+            props.useRenderedPage('landingPage');
         } else if(values.pasword !== values.confirmPassword){
             alert('your passwords do not match')
            

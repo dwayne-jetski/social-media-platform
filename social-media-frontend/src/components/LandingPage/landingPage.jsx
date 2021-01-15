@@ -9,13 +9,19 @@ import useForm from '../useForm/useForm';
 
 
 
-const LandingPage = () => {
+const LandingPage = (props) => {
 
     const login = () => {
 
         console.log('Email: ', values.email)
 
     }
+
+    const handleClick = (name) => {
+        console.log(name);
+        props.useRenderedPage(name);
+    }
+
 
     const { values, handleChange, handleSubmit } = useForm(login);
 
@@ -43,7 +49,7 @@ const LandingPage = () => {
                     <div>
                         <br/>
                         <span className="or">or</span>
-                        <Button>Create Account</Button>
+                        <Button onClick={()=>{handleClick('createAccount')}}>Create Account</Button>
                     </div>
                 </Col>
             </Row>
