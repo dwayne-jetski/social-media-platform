@@ -10,33 +10,32 @@ function App() {
 
   const [ renderedPage, useRenderedPage ] = useState('landingPage')
 
-  
+  console.log("app.js renderedPage",renderedPage)
 
-    if(renderedPage === 'landingPage'){
-      return (
-        <div className="App">
-            <NavBar 
-            renderedPage = {renderedPage}
-            useRenderedPage = {useRenderedPage}
-            />
-            <LandingPage />
-            <CreateAccount/>
-         </div>
-      );
-    } else if (renderedPage === 'createAccount') {
+  if(renderedPage === 'landingPage'){
+    console.log("WORKED!: ",renderedPage)
+    return (
+      <div className="App">
+          <NavBar 
+          renderedPage = {renderedPage}
+          useRenderedPage = {useRenderedPage}
+          />
+          <LandingPage />
+        </div>
+    );
+  } else if (renderedPage === 'createAccount') {
+    console.log("WORKED!: ",renderedPage)
+    return (
+      <div className="App">
+          <NavBar 
+          renderedPage = {renderedPage}
+          useRenderedPage = {useRenderedPage}
+          />
+          <CreateAccount/>
+        </div>
+    );
 
-      return (
-        <div className="App">
-            <NavBar 
-            renderedPage = {renderedPage}
-            useRenderedPage = {useRenderedPage}
-            />
-            <LandingPage />
-            <CreateAccount/>
-         </div>
-      );
-
-    }
+  }
 
 
   
