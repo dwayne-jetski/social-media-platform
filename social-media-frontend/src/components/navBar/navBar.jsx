@@ -19,21 +19,8 @@ function NavBar(props){
     }
 
     const handleClick = (name) => {
-        console.log(name)
-        setCurrentPage(name)
-
-        if (currentPage === 'landingPage'){
-            console.log("currentPage: ", currentPage);
-            props.useRenderedPage('landingPage');
-            console.log("props.renderedPage: ", props.renderedPage);
-            console.log('----newRender-------')
-        } else if (currentPage === 'createAccount'){
-            console.log("currentPage: ", currentPage);
-            props.useRenderedPage('createAccount');
-            console.log("props.renderedPage: ", props.renderedPage);
-            console.log('----newRender-------')
-        }
-
+        console.log(name);
+        props.useRenderedPage(name);
     }
 
     return(

@@ -20,7 +20,10 @@ function App() {
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />
-          <LandingPage />
+          <LandingPage 
+          renderedPage = {renderedPage}
+          useRenderedPage = {useRenderedPage}
+          />
         </div>
     );
   } else if (renderedPage === 'createAccount') {
@@ -31,7 +34,10 @@ function App() {
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />
-          <CreateAccount/>
+          <CreateAccount
+          renderedPage = {renderedPage}
+          useRenderedPage = {useRenderedPage}
+          />
         </div>
     );
 
