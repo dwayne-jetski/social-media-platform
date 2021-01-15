@@ -10,6 +10,7 @@ import useForm from '../useForm/useForm';
 import NavLink from 'react-bootstrap/NavLink'
 
 
+
 function NavBar(props){
 
     const [ currentPage, setCurrentPage ] = useState('landingPage')
@@ -22,6 +23,16 @@ function NavBar(props){
         console.log(name);
         props.useRenderedPage(name);
     }
+
+    const search = () =>{
+        console.log("Search Result: ", values.search);
+        values.search = '';
+        console.log("Search Result: ", values.search);
+    }
+
+
+    const { values, handleChange, handleSubmit, } = useForm(search)
+
 
     return(
         <React.Fragment>
@@ -39,6 +50,12 @@ function NavBar(props){
                         <NavLink className="nav-link" onClick={()=>handleClick('profilePage')} name="createAccount" href="#profile">Profile Page</ NavLink>
                     </li>
                     </ul>
+                </div>
+                <div>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Control type="text" placeholder="Search Users..." name="search" onChange={handleChange} value={values.search}></Form.Control>
+                        <Button type="Submit">Search</Button>
+                    </Form>
                 </div>
             </Navbar>
         </React.Fragment>
