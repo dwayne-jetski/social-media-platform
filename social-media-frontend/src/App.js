@@ -5,6 +5,7 @@ import React from 'react';
 import CreateAccount from './components/CreateAccountPage/createAccount'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/navBar/navBar'
+import UserProfile from './components/UserProfile/userProfile.jsx';
 
 
 function App() {
@@ -12,8 +13,7 @@ function App() {
     <div className="App">
 
       <NavBar/>
-      
-      <CreateAccount/>
+      <UserProfile/>
     
     </div>
   );
