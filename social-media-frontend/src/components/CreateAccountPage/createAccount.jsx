@@ -19,7 +19,7 @@ function CreateAccount(props){
         if(values.password === values.confirmPassword){
             alert(`Thanks for registering! Check your email ${values.email} for confirmation`);            
         
-            
+            props.useRenderedPage('landingPage');
         } else if(values.pasword !== values.confirmPassword){
             alert('your passwords do not match')
            
