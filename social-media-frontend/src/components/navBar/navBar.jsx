@@ -6,9 +6,10 @@ import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form';
 import {Col, Row} from 'react-bootstrap';
+import useForm from '../useForm/useForm'
 
 
-function NavBar(){
+function NavBar(props){
 
 
 
