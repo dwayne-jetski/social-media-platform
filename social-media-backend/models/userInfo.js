@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
+const Joi = require('joi');
 
 const userInfoSchema = new mongoose.Schema({
     firstName: { type: String, required: true, minlength: 1, maxlength: 15 },
@@ -17,10 +18,40 @@ const profileDate = new mongoose.Schema({
     aboutMe: { default: "", type: String, minlength: 1, maxlength: 800 },
     likedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
     dislikedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
-    profilePic: { default: null}
+    profilePic: { default: null} string value
 })
 
 
-const userInfo = mongoose.model('userInfo', userInfoSchema);
+const UserInfo = mongoose.model('UserInfo', userInfoSchema);
+
+function validateUserInfo(userInfo) {
+    const schema = Joi.object({
+        firstName: Joi.string().min(1).max(15).required(),
+        lastName: Joi.string().min(1).max(15).required(),
+        email: Joi.string().min(1).max(15).required(),
+        userName: Joi.string().min(8).max(15).required(),
+        password: Joi.string().min(8).max(15).required(),
+       
+    });
+    return schema.validate(userInfo);
+}
+exports.UserInfo = UserInfo;
+exports.validate = validateUserInfo;
+exports.userInfoSchema = userInfoSchema;
+
+
+function validateProfileData(profileData) {
+    const schema = Joi.object({
+        posts: Joi.string().max(240).min(1).required(),
+        likedMusic: Joi.string().min(1).max(15).required(),
+        dislikedMusic: Joi.string().min(1).max(15).required(),
+
+    });
+    return schema.validate(profileData);
+    }
+    exports.ProfileData = ProfileData;
+    exports.validate = validateProfileData;
+    exports.profileDataSchema = profileData;
+}
 
 module.exports = userInfo;
