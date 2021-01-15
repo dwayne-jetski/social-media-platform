@@ -13,7 +13,13 @@ const LandingPage = (props) => {
 
     const login = () => {
 
-        console.log('Email: ', values.email)
+        console.log('Email: ', values.email);
+        let password = true //will eventually be a statement to test whether or not the password works
+        console.log('in')
+        if(password === true){
+            props.useRenderedPage('profilePage');
+            console.log('IN! renderPage: ', props.renderedPage);
+        };
 
     }
 
@@ -37,7 +43,7 @@ const LandingPage = (props) => {
                         <br/>
                     </div>
                     <Row>
-                        <Form className="sign_in_Form container">
+                        <Form className="sign_in_Form container" onSubmit={()=>login()}>
                             <Form.Label>Email Address</Form.Label>
                             <Form.Control className="m-1" type="email" placeholder="Enter email" name="email" onChange={handleChange} value={values.email} required={true}/>
                             <Form.Label>Password</Form.Label>
@@ -53,12 +59,13 @@ const LandingPage = (props) => {
                     </div>
                 </Col>
             </Row>
-            
-            <footer class="py-3 bg-light">
-            <div class="container">
-                <p class="text-center">Copyright &copy; MusicApp 2021</p>
-            </div>
-            </footer>
+            <Row>
+                <footer class="py-3 bg-light">
+                <div class="container">
+                    <p class="text-center">Copyright &copy; MusicApp 2021</p>
+                </div>
+                </footer>
+            </Row>
         </React.Fragment>
     )
 }

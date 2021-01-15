@@ -26,14 +26,17 @@ function NavBar(props){
     return(
         <React.Fragment>
             <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
-                <NavLink className="navbar-brand" onClick={()=>handleClick('landingPage')} name="landingPage" href="#">MusicApp</NavLink>
+                <NavLink className="navbar-brand" onClick={()=>handleClick('landingPage')} name="landingPage" href="#home">MusicApp</NavLink>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <NavLink className="nav-link" onClick={()=>handleClick('landingPage')} name="landingPage" href="#">Home<span className="sr-only">(current)</span></NavLink>
+                        <NavLink className="nav-link" onClick={()=>handleClick('landingPage')} name="landingPage" href="#home">Home<span className="sr-only">(current)</span></NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" onClick={()=>handleClick('createAccount')} name="createAccount" href="#">Sign up</ NavLink>
+                        <NavLink className="nav-link" onClick={()=>handleClick('createAccount')} name="createAccount" href="#createaccount">Sign up</ NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" onClick={()=>handleClick('profilePage')} name="createAccount" href="#profile">Profile Page</ NavLink>
                     </li>
                     </ul>
                 </div>

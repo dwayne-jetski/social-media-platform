@@ -39,13 +39,23 @@ function App() {
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />
-        </div>
+      </div>
     );
-
+  } else if (renderedPage === 'profilePage'){
+    console.log("WORKED!: ",renderedPage)
+    return (
+      <div className="App">
+          <NavBar 
+          renderedPage = {renderedPage}
+          useRenderedPage = {useRenderedPage}
+          />
+          <UserProfile
+          renderedPage = {renderedPage}
+          useRenderedPage = {useRenderedPage}
+          />
+      </div>
+    );
   }
-
-
-  
 }
 
 export default App;
