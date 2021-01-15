@@ -6,31 +6,39 @@ import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form';
 import {Col, Row} from 'react-bootstrap';
+import useForm from '../useForm/useForm';
+import NavLink from 'react-bootstrap/NavLink'
 
 
-function NavBar(){
+function NavBar(props){
 
+    const [ currentPage, setCurrentPage ] = useState('landingPage')
 
+    const changePage = (props) =>{
+        
+    }
+
+    const handleClick = (name) => {
+        console.log(name);
+        props.useRenderedPage(name);
+    }
 
     return(
-        <div>
+        <React.Fragment>
             <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">MusicApp</a>
-                <Button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </Button>
+                <NavLink className="navbar-brand" onClick={()=>handleClick('landingPage')} name="landingPage" href="#">MusicApp</NavLink>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Home<span className="sr-only">(current)</span></a>
+                        <NavLink className="nav-link" onClick={()=>handleClick('landingPage')} name="landingPage" href="#">Home<span className="sr-only">(current)</span></NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Sign up</a>
+                        <NavLink className="nav-link" onClick={()=>handleClick('createAccount')} name="createAccount" href="#">Sign up</ NavLink>
                     </li>
                     </ul>
                 </div>
             </Navbar>
-        </div>
+        </React.Fragment>
     );
 }
 

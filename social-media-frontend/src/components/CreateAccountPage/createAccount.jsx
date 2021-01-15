@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl'
-
 import Form from 'react-bootstrap/Form';
 import {Col, Row} from 'react-bootstrap';
 import useForm from '../useForm/useForm';
 
 
-function CreateAccount(){    
+function CreateAccount(props){    
 
-    const register = (textColor) =>{
+    const register = () =>{
         console.log("Email: ", values.email);
         console.log("User Name: ", values.userName);
         console.log('First Name: ', values.firstName);
@@ -19,6 +18,8 @@ function CreateAccount(){
 
         if(values.password === values.confirmPassword){
             alert(`Thanks for registering! Check your email ${values.email} for confirmation`);            
+        
+            props.useRenderedPage('landingPage');
         } else if(values.pasword !== values.confirmPassword){
             alert('your passwords do not match')
            
@@ -36,6 +37,8 @@ function CreateAccount(){
                     
                     <Col >               
                         <Form onSubmit={handleSubmit}>
+                            <h1>Register Now</h1>
+                            <br/>
                             <Form.Label>Email Address</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleChange} value={values.email} required={true}/>
                             <Form.Label>Username</Form.Label>
@@ -48,6 +51,7 @@ function CreateAccount(){
                             <Form.Control type="password" placeholder="Enter password 8-32 characters long" name="password" onChange={handleChange} value={values.password} required={true}/>
                             <Form.Label className={values.textColor}>Confirm Password</Form.Label>
                             <Form.Control type="password" placeholder="Confirm your password" name="confirmPassword" onChange={handleChange} value={values.confirmPassword} required={true}/>
+                            <br/>
                             <Button type="submit">Register</Button>
                         </Form>
                     </Col>
