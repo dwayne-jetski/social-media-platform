@@ -7,7 +7,8 @@ import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form';
 import {Col, Row} from 'react-bootstrap';
 import useForm from '../useForm/useForm';
-import NavLink from 'react-bootstrap/NavLink'
+import NavLink from 'react-bootstrap/NavLink';
+import './navBar.css'
 
 
 
@@ -52,7 +53,7 @@ function NavBar(props){
                     </ul>
                 </div>
                 <div>
-                    <Form onSubmit={handleSubmit}>
+                    <Form className="search" onSubmit={handleSubmit}>
                         <Form.Control type="text" placeholder="Search Users..." name="search" onChange={handleChange} value={values.search}></Form.Control>
                         <Button type="Submit">Search</Button>
                     </Form>
