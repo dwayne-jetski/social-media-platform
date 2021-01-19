@@ -1,15 +1,12 @@
 .profile {
     display: flex;
     flex-direction: row;
+    margin-top: 6em;
 }
 
 .profile_card {
     margin-left: 10em;
     background-image: linear-gradient(purple, darkblue);
-}
-
-.profile {
-    margin-top: 6em;
 }
 
 .m-2 {

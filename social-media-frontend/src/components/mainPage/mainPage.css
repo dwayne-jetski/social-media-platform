@@ -1,0 +1,26 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+}
+
+.main-card {
+    margin-left: 10em;
+    background-image: linear-gradient(purple, darkblue);
+}
+
+.card-info {
+    display: flex;
+}
+
+.m-2 {
+    color: white;
+}
+
+.drop-downs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+}
