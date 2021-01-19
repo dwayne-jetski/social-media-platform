@@ -3,9 +3,12 @@ const express = require('express');
 const app = express();
 
 
-const userInfos = require('./routes/userInfos');
+const userInfo = require('./routes/userInfos');
+const mongooseUniqueValidator = require('mongoose-unique-validator');
 
 connectDB();
+    
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
