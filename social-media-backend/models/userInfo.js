@@ -2,27 +2,29 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const Joi = require('joi');
 
-const userInfoSchema = new mongoose.Schema({
+
+const profileData = new mongoose.Schema({
+    posts: { default: [], type: String, minlength: 1, maxlength: 240 },
+    aboutMe: { default: "", type: String, minlength: 1, maxlength: 800 },
+    likedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
+    dislikedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
+    profilePic: { default: null, type: String}
+});
+
+const userInfo = new mongoose.Schema({
     firstName: { type: String, required: true, minlength: 1, maxlength: 15 },
     lastName: { type: String, required: true, minlength: 1, maxlength: 15 },
     eMail: { type: String, required: true, minlength: 1, maxlength: 25, unique: true },
     userName: { type: String, required: true, minlength: 8, maxlength: 15, unique: true },
     password: { type: String, required: true, minlength: 8, maxlength: 10 },
-    profileInfo: { profileDate }
+    profileInfo: [profileData]
 
 
-})
-
-const profileDate = new mongoose.Schema({
-    posts: { default: [], type: String, minlength: 1, maxlength: 240 },
-    aboutMe: { default: "", type: String, minlength: 1, maxlength: 800 },
-    likedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
-    dislikedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
-    profilePic: { default: null} string value
-})
+});
 
 
-const UserInfo = mongoose.model('UserInfo', userInfoSchema);
+
+const UserInfo = mongoose.model('UserInfo', userInfo);
 
 function validateUserInfo(userInfo) {
     const schema = Joi.object({
@@ -35,9 +37,10 @@ function validateUserInfo(userInfo) {
     });
     return schema.validate(userInfo);
 }
+
 exports.UserInfo = UserInfo;
 exports.validate = validateUserInfo;
-exports.userInfoSchema = userInfoSchema;
+exports.userInfo = userInfo;
 
 
 function validateProfileData(profileData) {
@@ -49,9 +52,8 @@ function validateProfileData(profileData) {
     });
     return schema.validate(profileData);
     }
-    exports.ProfileData = ProfileData;
-    exports.validate = validateProfileData;
-    exports.profileDataSchema = profileData;
-}
 
+exports.ProfileData = profileData;
+exports.validate = validateProfileData;
+exports.profileDataSchema = profileData;
 module.exports = userInfo;
