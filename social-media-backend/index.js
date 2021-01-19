@@ -16,13 +16,13 @@ app.use('/api/userInfos', userInfo);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-    console.log('Server started on port: ${port}');
+    console.log(`Server started on port: ${port}`);
 });
 
 
-app.listen(3000, function () {
+/* app.listen(3000, function () {
     console.log("Server started. Listening on port 3000.");
-});
+}); */
 
 app.get("/api/userInfo/:id", (req, res) => {
     let id = req.params.id;

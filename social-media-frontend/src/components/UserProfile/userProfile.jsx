@@ -10,7 +10,7 @@ const UserProfile = () => {
     return(
         <React.Fragment>
             <Row className="profile">
-                <Col xs={2}></Col>
+                <Col xs={1}></Col>
                 <Col>
                     <Card className="profile_card" style={{ width: '18rem' }}>
                     <Card.Img variant="top" src="holder.js/100px180" />
