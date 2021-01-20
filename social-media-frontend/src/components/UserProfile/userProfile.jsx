@@ -32,20 +32,28 @@ const UserProfile = () => {
                     </Card>
                 </Col>
                 <Col xs={.5}/>
-                <Col>
-                    <Card className="container m-2 profile_card text_color">
-                        <Card.Header>FIRST NAME LAST NAME</Card.Header>
-                        <Card.Body>
-                            <Card.Title>ABOUT ME</Card.Title>
-                            <Card.Text>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente tempora labore beatae blanditiis ex id sed tenetur laudantium incidunt minus consequuntur nulla nihil provident magni, mollitia laboriosam eaque neque veniam!
-                            </Card.Text>
-                        </Card.Body>
+                
+                <Col xs={6}>
+                    <Row>
+                        <Card className="container m-2 profile_card text_color">
+                            <Card.Header>FIRST NAME LAST NAME</Card.Header>
+                            <Card.Body>
+                                <Card.Title>ABOUT ME</Card.Title>
+                                <Card.Text>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente tempora labore beatae blanditiis ex id sed tenetur laudantium incidunt minus consequuntur nulla nihil provident magni, mollitia laboriosam eaque neque veniam!
+                                </Card.Text>
+                            </Card.Body>
 
-                        <Button variant="outline-primary" className="m-2">Add friend</Button>
-                        <Button variant="outline-primary" className="m-2">Remove friend</Button>
-                    </Card>
+                            <Button variant="outline-primary" className="m-2">Add friend</Button>
+                            <Button variant="outline-primary" className="m-2">Remove friend</Button>
+                        </Card>
+                    </Row>
+
+                    <Row >
+                        <iframe src="https://open.spotify.com/embed/album/52XjGg0uwOJBEqYY1DhKsU" width="800" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </Row>
                 </Col>
+
                 <Col xs={2}></Col>
             </Row>
             
@@ -53,13 +61,6 @@ const UserProfile = () => {
                 <br></br>
             </Row>
             
-            <Row className="background_player">
-                <Col xs={3}/>
-                <Col>
-                    <iframe src="https://open.spotify.com/embed/album/52XjGg0uwOJBEqYY1DhKsU" width="800" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                </Col>
-                <Col/>
-            </Row>
 
             <Row>
                 <br></br>
