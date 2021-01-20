@@ -37,9 +37,8 @@ const LandingPage = (props) => {
             <Row className="jumbotron">
                 <Col>
                     <div>
-                        <h1 className="display-4">Welcome to MusicApp!</h1>                        
-                        <p className="lead">Connect with other music enthusiasts like yourself.</p>                   
-                        <p>Log in now to start sharing your favorite tunes.</p>
+                        <h1 className="display-4">Welcome to MusicApp.</h1>                                          
+                        <p>Log in now to start sharing your favorite tunes!</p>
                         <br/>
                     </div>
                     <Row>
@@ -47,16 +46,13 @@ const LandingPage = (props) => {
                             <Form.Label>Email Address</Form.Label>
                             <Form.Control className="m-1" type="email" placeholder="Enter email" name="email" onChange={handleChange} value={values.email} required={true}/>
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Enter password" name="password" onChange={handleChange} value={values.password} required={true}/>
+                            <Form.Control className="m-1" type="password" placeholder="Enter password" name="password" onChange={handleChange} value={values.password} required={true}/>
                             <br/>
-                            <Button type="submit">Log In</Button>
+                            <Button variant="outline-primary" type="submit">Log In</Button>
                         </Form>
                     </Row>
-                    <div>
-                        <br/>
                         <span className="or">or</span>
-                        <Button onClick={()=>{handleClick('createAccount')}}>Create Account</Button>
-                    </div>
+                        <Button onClick={()=>{handleClick('createAccount')}} variant="outline-primary">Create Account</Button>
                 </Col>
             </Row>
         </React.Fragment>

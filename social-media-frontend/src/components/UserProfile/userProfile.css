@@ -1,6 +1,7 @@
 .profile {
     display: flex;
     flex-direction: row;
+    margin-top: 6em;
 }
 
 .background {
@@ -16,14 +17,34 @@
 }
 
 .profile_card {
+    background-image: linear-gradient(darkblue, purple);
     margin-left: 10em;
-    background-image: linear-gradient( darkblue, purple);
+    box-shadow: 2px 5px 10px black;
 }
 
-.profile {
-    margin-top: 6em;
-}
-
-.m-2 {
+.text_color {
     color: white;
+}
+
+.btn-flat {
+    background-color: orange;
+    color: white;
+}
+
+.list_items {
+    box-shadow: 2px 5px 10px black;
+    color: white;
+    background-image: linear-gradient(to right, hotpink, violet, hotpink)
+}
+
+.bio {
+    height: 60%;
+    box-shadow: 2px 5px 10px black;
+}
+
+.spotify {
+    padding: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,10 +1,10 @@
 .jumbotron {
-    margin-top: 12em;
+    padding: 1em;
     background-image: linear-gradient(purple, darkblue);
     color: white;
 }
 
-.create_account_form, .or {
+.create_account_form {
     display: flex;
     flex-direction: column;
     justify-content: center;
