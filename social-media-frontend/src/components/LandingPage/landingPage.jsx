@@ -59,13 +59,6 @@ const LandingPage = (props) => {
                     </div>
                 </Col>
             </Row>
-            <Row>
-                <footer class="py-3 bg-light">
-                <div class="container">
-                    <p class="text-center">Copyright &copy; MusicApp 2021</p>
-                </div>
-                </footer>
-            </Row>
         </React.Fragment>
     )
 }

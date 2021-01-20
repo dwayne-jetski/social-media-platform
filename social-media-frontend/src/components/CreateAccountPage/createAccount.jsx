@@ -9,12 +9,6 @@ import useForm from '../useForm/useForm';
 function CreateAccount(props){    
 
     const register = () =>{
-        console.log("Email: ", values.email);
-        console.log("User Name: ", values.userName);
-        console.log('First Name: ', values.firstName);
-        console.log('Last Name: ', values.lastName);
-        console.log("Password: ", values.password);
-        console.log("Password Confirmation: ", values.confirmPassword);
 
         if(values.password === values.confirmPassword){
             alert(`Thanks for registering! Check your email ${values.email} for confirmation`);            
@@ -34,7 +28,6 @@ function CreateAccount(props){
             <Row className="jumbotron" >
                 <Col xs={3} />
                 <Col xs={6} className="create_account_form"> 
-                    
                     <Col >               
                         <Form onSubmit={handleSubmit}>
                             <h1>Register Now</h1>

@@ -6,6 +6,7 @@ import CreateAccount from './components/CreateAccountPage/createAccount'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/navBar/navBar'
 import UserProfile from './components/UserProfile/userProfile.jsx';
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />
+          <Footer/>
         </div>
     );
   } else if (renderedPage === 'createAccount') {
@@ -39,6 +41,7 @@ function App() {
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />
+          <Footer/>
       </div>
     );
   } else if (renderedPage === 'profilePage'){
@@ -53,6 +56,7 @@ function App() {
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />
+          <Footer/>
       </div>
     );
   }

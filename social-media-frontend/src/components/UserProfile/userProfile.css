@@ -3,9 +3,21 @@
     flex-direction: row;
 }
 
+.background {
+    background-image: linear-gradient(purple, darkblue);
+}
+
+.background_filler {
+    background: darkblue
+}
+
+.background_player {
+    background-image: linear-gradient(darkblue, purple)
+}
+
 .profile_card {
     margin-left: 10em;
-    background-image: linear-gradient(purple, darkblue);
+    background-image: linear-gradient( darkblue, purple);
 }
 
 .profile {
