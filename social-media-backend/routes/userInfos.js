@@ -1,13 +1,13 @@
-const { UserInfo, validate } = require('../models/userinfo');
-const express = require('express');
+const { UserInfo, validateUserInfo, ProfileData, validateProfileData, NewPost, validateNewPost } = require(`../models/userinfo`);
+const express = require(`express`);
 const router = express.Router();
 
-router.get('/', async (req, res) =>{
+router.get(`/`, async (req, res) =>{
     try {
         const userInfos = await UserInfo.find();
         return res.send(userInfos);
     } catch (ex) {
-        return res.status(500).send('Internal Server Error: ${ex}');
+        return res.status(500).send(`Internal Server Error: ${ex}`);
     }
 });
 
@@ -17,17 +17,17 @@ router.get('/:id', async (req, res) => {
         const product = await product.findByID(req.params.id);
 
         if (!userInfo)
-        return res.status(400).send('The userInfo with id "${req.params.id}" does not exist.');
+        return res.status(400).send(`The userInfo with id "${req.params.id}" does not exist.`);
 
         return res.send(userInfo);
     } catch (ex) {
-        return res.status(500).send('Internal Server Error: ${ex}');
+        return res.status(500).send(`Internal Server Error: ${ex}`);
     }
 });
 
-router.post('/', async (req, res) => {
+router.post(`/`, async (req, res) => {
     try {
-        const { error } = validate(req.body);
+        const { error } = validateUserInfo(req.body);
         if (error)
         return res.status(400).send(error);
         
@@ -52,9 +52,9 @@ module.exports=router;
 
 
 
-router.post('/', async (req, res) => {
+router.post(`/`, async (req, res) => {
     try {
-        const { error } = validate(req.body);
+        const { error } = validateUserInfo(req.body);
         if (error)
         return res.status(400).send(error);
         
@@ -78,9 +78,9 @@ router.post('/', async (req, res) => {
 
 module.exports=router;
 
-router.put('/:id', async (req,res) => {
+router.put(`/:id`, async (req,res) => {
     try {
-        const { error } = validate(req.body);
+        const { error } = validateUserInfo(req.body);
         if (error) return res.status(400).send(error);
 
         const userInfo = await UserInfo.findByIdAndUpdate(
@@ -97,28 +97,28 @@ router.put('/:id', async (req,res) => {
         );
 
         if (!userInfo)
-        return res.status(400).send('The userInfo with id "${req.params.id}" does not exist.');
+        return res.status(400).send(`The userInfo with id "${req.params.id}" does not exist.`);
 
         await userInfo.save();
 
         return res.send(userInfo);
     } catch (ex) {
-        return res.status(500).send('Internal Server Error: ${ex}');
+        return res.status(500).send(`Internal Server Error: ${ex}`);
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete(`/:id`, async (req, res) => {
     try {
 
         const userInfo = await UserInfo.findByIdAndRemove(req.params.id);
 
         if (!userInfo)
-        return res.status(400).send('The userInfo with id "${req.params.id}" does not exist.');
+        return res.status(400).send(`The userInfo with id "${req.params.id}" does not exist.`);
 
         return res.send(userInfo);
 
     } catch (ex) {
-        return res.status(500).send('Internal Server Error: ${ex}');
+        return res.status(500).send(`Internal Server Error: ${ex}`);
 
     }
 });

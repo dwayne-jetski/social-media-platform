@@ -1,14 +1,20 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const Joi = require('joi');
+const { string } = require('joi');
 
+const newPost = new mongoose.Schema({
+    body: {type: String, minlength: 1, maxlength: 240, required: true},
+    likes: {type: Number, min: 0},
+    dislikes: {type: Number, min: 0},
+});
 
 const profileData = new mongoose.Schema({
-    posts: { default: [], type: String, minlength: 1, maxlength: 240 },
+    posts: { default: [], type: Array},
     aboutMe: { default: "", type: String, minlength: 1, maxlength: 800 },
     likedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
     dislikedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
-    profilePic: { default: null, type: String}
+    profilePic: { default: null, type: String},
 });
 
 const userInfo = new mongoose.Schema({
@@ -17,14 +23,23 @@ const userInfo = new mongoose.Schema({
     eMail: { type: String, required: true, minlength: 1, maxlength: 25, unique: true },
     userName: { type: String, required: true, minlength: 8, maxlength: 15, unique: true },
     password: { type: String, required: true, minlength: 8, maxlength: 10 },
-    profileInfo: [profileData]
-
-
+    profileInfo: [profileData],
+    likedPosts: {default: [], type: Array, required: true},
+    friends: {default: [], type: Array, required: true}
 });
 
 
-
 const UserInfo = mongoose.model('UserInfo', userInfo);
+const ProfileData = mongoose.model('ProfileData', profileData);
+const NewPost = mongoose.model('Post', newPost);
+
+function validateNewPost(newPost){
+    const schema = Joi.object({
+        body: Joi.string().min(1).max(250).required(),
+        likes: Joi.number.min(0),
+        dislikes: Joi.number.min(0)
+    })
+}
 
 function validateUserInfo(userInfo) {
     const schema = Joi.object({
@@ -33,15 +48,12 @@ function validateUserInfo(userInfo) {
         email: Joi.string().min(1).max(15).required(),
         userName: Joi.string().min(8).max(15).required(),
         password: Joi.string().min(8).max(15).required(),
+        likedPost: Joi.array().required(),
+        friends: Joi.array().required()
        
     });
     return schema.validate(userInfo);
 }
-
-exports.UserInfo = UserInfo;
-exports.validate = validateUserInfo;
-exports.userInfo = userInfo;
-
 
 function validateProfileData(profileData) {
     const schema = Joi.object({
@@ -53,7 +65,11 @@ function validateProfileData(profileData) {
     return schema.validate(profileData);
     }
 
-exports.ProfileData = profileData;
-exports.validate = validateProfileData;
-exports.profileDataSchema = profileData;
+exports.NewPost = NewPost;
+exports.validateNewPost = validateNewPost;
+exports.UserInfo = UserInfo;
+exports.validateUserInfo = validateUserInfo;
+exports.userInfo = userInfo;
+exports.ProfileData = ProfileData;
+exports.validateProfileData = validateProfileData;
 module.exports = userInfo;
