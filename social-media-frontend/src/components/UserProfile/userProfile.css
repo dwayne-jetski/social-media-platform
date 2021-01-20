@@ -19,6 +19,7 @@
 .profile_card {
     background-image: linear-gradient(darkblue, purple);
     margin-left: 10em;
+    background-image: linear-gradient(purple, darkblue);
     box-shadow: 2px 5px 10px black;
 }
 
