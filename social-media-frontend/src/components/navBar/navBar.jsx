@@ -27,8 +27,6 @@ function NavBar(props){
 
     const search = () =>{
         console.log("Search Result: ", values.search);
-        values.search = '';
-        console.log("Search Result: ", values.search);
     }
 
 

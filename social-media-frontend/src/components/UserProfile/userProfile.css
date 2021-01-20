@@ -4,14 +4,38 @@
     margin-top: 6em;
 }
 
+.background {
+    background-image: linear-gradient(purple, darkblue);
+}
+
+.background_filler {
+    background: darkblue
+}
+
+.background_player {
+    background-image: linear-gradient(darkblue, purple)
+}
+
 .profile_card {
+    background-image: linear-gradient(darkblue, purple);
     margin-left: 10em;
     background-image: linear-gradient(purple, darkblue);
     box-shadow: 2px 5px 10px black;
 }
 
-.m-2, .m-4 {
+.text_color {
     color: white;
+}
+
+.btn-flat {
+    background-color: orange;
+    color: white;
+}
+
+.list_items {
+    box-shadow: 2px 5px 10px black;
+    color: white;
+    background-image: linear-gradient(to right, hotpink, violet, hotpink)
 }
 
 .bio {

@@ -6,17 +6,11 @@ import CreateAccount from './components/CreateAccountPage/createAccount'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/navBar/navBar'
 import UserProfile from './components/UserProfile/userProfile.jsx';
-import MainPage from './components/mainPage/mainPage'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
-  return(
-    <div>
-      <NavBar/>
-      <MainPage/>
-    </div>
-  )
-  /*const [ renderedPage, useRenderedPage ] = useState('landingPage')
+  const [ renderedPage, useRenderedPage ] = useState('landingPage')
 
   console.log("app.js renderedPage",renderedPage)
 
@@ -32,6 +26,7 @@ function App() {
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />
+          <Footer/>
         </div>
     );
   } else if (renderedPage === 'createAccount') {
@@ -46,6 +41,7 @@ function App() {
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />
+          <Footer/>
       </div>
     );
   } else if (renderedPage === 'profilePage'){
@@ -60,9 +56,10 @@ function App() {
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />
+          <Footer/>
       </div>
     );
-  }*/
+  }
 }
 
 export default App;
