@@ -6,7 +6,12 @@
 
 .profile_card {
     margin-left: 10em;
+    background-image: linear-gradient(purple, darkblue);
     box-shadow: 2px 5px 10px black;
+}
+
+.m-2, .m-4 {
+    color: white;
 }
 
 .bio {
