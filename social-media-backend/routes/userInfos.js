@@ -1,4 +1,4 @@
-const { UserInfo, validateUserInfo, ProfileData, validateProfileData, NewPost, validateNewPost } = require(`../models/userinfo`);
+const { UserInfo, validateUserInfo} = require('../models/userInfo');
 const express = require(`express`);
 const router = express.Router();
 
@@ -47,7 +47,7 @@ router.post(`/`, async (req, res) => {
     }
 });
 
-module.exports=router;
+
 
 
 
@@ -76,7 +76,7 @@ router.post(`/`, async (req, res) => {
     }
 });
 
-module.exports=router;
+
 
 router.put(`/:id`, async (req,res) => {
     try {
@@ -122,3 +122,5 @@ router.delete(`/:id`, async (req, res) => {
 
     }
 });
+
+module.exports=router;
