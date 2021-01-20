@@ -12,7 +12,7 @@ connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api/userInfos', userInfo);
+app.use('/api/userInfo', userInfo);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
@@ -39,7 +39,7 @@ app.post("/api/userInfo", (req, res) => {
 app.put("/api/userInfo", (req, res) => {
     let userInfoToUpdate = req.body;
     let updatedUserInfo = repoContext.userInfo.updateUserInfo(userInfoToUpdate);
-    res.send(updateUserInfo);
+    res.send(updatedUserInfo);
 });
 
 app.delete("/api/userInfo/:id", (req, res) => {
