@@ -37,9 +37,8 @@ const LandingPage = (props) => {
             <Row className="jumbotron">
                 <Col>
                     <div>
-                        <h1 className="display-4">Welcome to MusicApp!</h1>                        
-                        <p className="lead">Connect with other music enthusiasts like yourself.</p>                   
-                        <p>Log in now to start sharing your favorite tunes.</p>
+                        <h1 className="display-4">Welcome to MusicApp.</h1>                                          
+                        <p>Log in now to start sharing your favorite tunes!</p>
                         <br/>
                     </div>
                     <Row>

@@ -4,6 +4,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form';
 import {Col, Row} from 'react-bootstrap';
 import useForm from '../useForm/useForm';
+import './createAccount.css'
 
 
 function CreateAccount(props){    
@@ -56,6 +57,13 @@ function CreateAccount(props){
                         </Form>
                     </Col>
                 </Col>
+            </Row>
+            <Row>
+                <footer class="py-3 bg-light">
+                <div class="container">
+                    <p class="text-center">Copyright &copy; MusicApp 2021</p>
+                </div>
+                </footer>
             </Row>
         </React.Fragment>
             

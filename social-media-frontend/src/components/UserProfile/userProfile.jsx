@@ -16,13 +16,13 @@ const UserProfile = () => {
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <div className="container m-2">
-                        <Card.Title>Nickname</Card.Title>
+                        <Card.Title>MUSICUSER17</Card.Title>
                         <Card.Text>
                         I joined MusicApp to: blah blah blah
                         </Card.Text>
                         </div>
                         <ListGroup variant="flush">
-                            <Card.Title className="m-2">MUSICAL INTERESTS:</Card.Title>
+                            <Card.Title className="m-4">MUSICAL INTERESTS:</Card.Title>
                             <ListGroup.Item>Rap</ListGroup.Item>
                             <ListGroup.Item>RnB</ListGroup.Item>
                             <ListGroup.Item>Punk Rock</ListGroup.Item>
@@ -31,17 +31,21 @@ const UserProfile = () => {
                     </Card>
                 </Col>
                 <Col>
-                    <Card className="m-3">
+                    <Card className="bio">
                         <Card.Header>FIRST NAME LAST NAME</Card.Header>
                         <Card.Body>
-                            <Card.Title>About me</Card.Title>
+                            <Card.Title>ABOUT ME</Card.Title>
                             <Card.Text>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente tempora labore beatae blanditiis ex id sed tenetur laudantium incidunt minus consequuntur nulla nihil provident magni, mollitia laboriosam eaque neque veniam!
                             </Card.Text>
                         </Card.Body>
-                        <Button variant="outline-dark" className="m-2">Add friend</Button>
+                        <Button variant="outline-primary" className="m-2">Add friend</Button>
                         <Button variant="outline-dark" className="m-2">Remove friend</Button>
                     </Card>
+
+                    <div className="spotify">
+                        <h1>Spotify playlist will go here.</h1>
+                    </div>
                 </Col>
                 <Col xs={2}></Col>
             </Row>
