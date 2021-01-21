@@ -1,0 +1,14 @@
+.background {
+    background-image: linear-gradient(purple, darkblue)
+}
+
+.card-background {
+    background-image: linear-gradient(darkblue, purple);
+    color: white
+}
+
+.image-size{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

@@ -8,7 +8,8 @@ import Form from 'react-bootstrap/Form';
 import {Col, Row} from 'react-bootstrap';
 import useForm from '../useForm/useForm';
 import NavLink from 'react-bootstrap/NavLink';
-import './navBar.css'
+import './navBar.css';
+import DisplayUsers from '../DisplayUsers/DisplayUsers';
 
 
 
@@ -16,9 +17,6 @@ function NavBar(props){
 
     const [ currentPage, setCurrentPage ] = useState('landingPage')
 
-    const changePage = (props) =>{
-        
-    }
 
     const handleClick = (name) => {
         console.log(name);
@@ -27,6 +25,7 @@ function NavBar(props){
 
     const search = () =>{
         console.log("Search Result: ", values.search);
+        props.useRenderedPage('displayUsers');
     }
 
 

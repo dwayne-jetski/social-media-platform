@@ -2,6 +2,16 @@ const mongoose = require('mongoose');
 const Joi = require('joi');
 
 
+const imageSchema = new mongoose.Schema({
+    name: String,
+    desc: String,
+    img:
+    {
+        data: Buffer,
+        contentType: String
+    }
+});
+
 const newPost = new mongoose.Schema({
     body: {type: String, minlength: 1, maxlength: 240, required: true},
     likes: {type: Number, min: 0},
@@ -13,7 +23,7 @@ const profileData = new mongoose.Schema({
     aboutMe: { default: "", type: String, minlength: 1, maxlength: 800 },
     likedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
     dislikedMusic: { default: [], type: String, minlength: 1, maxlength: 15 },
-    profilePic: { default: null, type: String},
+    profilePic: [imageSchema],
 });
 
 const userInfo = new mongoose.Schema({
@@ -24,7 +34,8 @@ const userInfo = new mongoose.Schema({
     password: { type: String, required: true, minlength: 8, maxlength: 32 },
     profileInfo: [profileData],
     likedPosts: {default: [], type: Array,},
-    friends: {default: [], type: Array,}
+    friends: {default: [], type: Array,},
+    friendRequests: {default: [], type: Array}
 });
 
 
@@ -50,7 +61,8 @@ function validateUserInfo(userInfo) {
         userName: Joi.string().min(8).max(25).required(),
         password: Joi.string().min(8).max(32).required(),
         likedPost: Joi.array(),
-        friends: Joi.array()
+        friends: Joi.array(),
+        friendRequests: Joi.array()
        
     });
     return schema.validate(userInfo);

@@ -6,7 +6,8 @@ import CreateAccount from './components/CreateAccountPage/createAccount'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/navBar/navBar'
 import UserProfile from './components/UserProfile/userProfile.jsx';
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
+import DisplayUsers from './components/DisplayUsers/DisplayUsers'
 
 function App() {
 
@@ -53,6 +54,21 @@ function App() {
           useRenderedPage = {useRenderedPage}
           />
           <UserProfile
+          renderedPage = {renderedPage}
+          useRenderedPage = {useRenderedPage}
+          />
+          <Footer/>
+      </div>
+    );
+  } else if (renderedPage === 'displayUsers'){
+    console.log("WORKED!: ",renderedPage)
+    return (
+      <div className="App">
+          <NavBar 
+          renderedPage = {renderedPage}
+          useRenderedPage = {useRenderedPage}
+          />
+          <DisplayUsers
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
           />

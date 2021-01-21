@@ -1,15 +1,15 @@
 const connectDB = require('./startup/db');
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 
 const userInfo = require('./routes/userInfos');
-const mongooseUniqueValidator = require('mongoose-unique-validator');
 
 connectDB();
     
 
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/userInfo', userInfo);
