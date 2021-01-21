@@ -24,7 +24,8 @@ const userInfo = new mongoose.Schema({
     password: { type: String, required: true, minlength: 8, maxlength: 32 },
     profileInfo: [profileData],
     likedPosts: {default: [], type: Array,},
-    friends: {default: [], type: Array,}
+    friends: {default: [], type: Array,},
+    friendRequests: {default: [], type: Array}
 });
 
 
@@ -50,7 +51,8 @@ function validateUserInfo(userInfo) {
         userName: Joi.string().min(8).max(25).required(),
         password: Joi.string().min(8).max(32).required(),
         likedPost: Joi.array(),
-        friends: Joi.array()
+        friends: Joi.array(),
+        friendRequests: Joi.array()
        
     });
     return schema.validate(userInfo);
