@@ -103,4 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-/social-media-backend/config/default.json
+
+/social-media-backend/config/keys.js

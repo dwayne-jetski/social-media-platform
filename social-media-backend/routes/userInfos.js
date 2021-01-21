@@ -1,6 +1,112 @@
-const { UserInfo, validateUserInfo} = require('../models/userInfo');
 const express = require(`express`);
 const router = express.Router();
+const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
+const keys = require("../config/keys");
+
+//Load input validation
+const validateRegisterInput = require('../validators/register');
+const validateLoginInput = require('../validators/login');
+const { User } = require('../models/user'); //Not sure if needed
+const { UserInfo, validateUserInfo} = require('../models/userInfo');
+const { ExtractJwt } = require('passport-jwt'); //not sure if needed
+
+
+// @route POST api/users/register
+// @desc Register user
+// @access Public
+router.post("/register", (req, res) => {
+    //form validation
+
+    const { errors, isValid } = validateRegisterInput(req.body);
+
+    //Check Validation 
+    if(!isValid) {
+        return res.status(400).json(errors)
+    }
+
+    UserInfo.findOne({email: req.body.email}).then(user => {
+        if(user){
+            return res.status(400).json({email: "Email Already Exists"});
+        } else {
+            const newUser = new UserInfo ({
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password,
+                userName: req.body.userName
+            });
+
+            //Hash pasword before saving in database
+            bcrypt.genSalt(10, (err, salt) => {
+                bcrypt.hash(newUser.password, salt, (err, hash) => {
+                    if (err) throw err;
+                    newUser.password = hash;
+                    newUser
+                        .save()
+                        .then(user=> res.json(user))
+                        .catch(err => console.log(err));
+                });
+            });
+        }
+    });
+});
+
+// @route POST api/users/login
+// @desc Login user and return JWT token
+// @access Public
+router.post("/login", (req, res) => {
+    //From validation
+
+    const { errors, isValid } = validateLoginInput(req.body);
+
+    //check validation
+    if(!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    const email = req.body.email; 
+    const pasword = req.body.password;
+
+    // Find user by email
+    User.findOne({ email }).then(user => {
+        //check if user exists
+        if(!user){
+            return res.status(404).json({ emailnotfound: "Email Not Found"});
+        };
+
+        //check password
+        bcrypt.compare(password, user.password).then(isMatch => {
+            if (isMatch){
+                //User Matched
+                //Create JWT Payload
+                const payload = {
+                    is: user.id,
+                    name: user.name
+                }
+
+                //sign token
+                jwt.sign(
+                    payload,
+                    keys.secretOrKey,
+                    {
+                        expiresIn: 31556926 //1 year in seconds
+                    },
+                    (err, token) => {
+                        res.json({
+                            success: true,
+                            token: "Bearer " + token
+                        });
+                    }
+                );
+            } else {
+                return res
+                .status(400)
+                .json({ passwordincorrect: "Password Incorrect"});
+            }
+        });
+    });
+});
+
 
 router.get(`/`, async (req, res) =>{
     try {
@@ -11,7 +117,7 @@ router.get(`/`, async (req, res) =>{
     }
 });
 
-router.get('/:id', async (req, res) => {
+/* router.get('/:id', async (req, res) => {
     try {
 
         const product = await product.findByID(req.params.id);
@@ -23,7 +129,7 @@ router.get('/:id', async (req, res) => {
     } catch (ex) {
         return res.status(500).send(`Internal Server Error: ${ex}`);
     }
-});
+}); */
 
 router.post(`/`, async (req, res) => {
     try {

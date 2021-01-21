@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
+const { date } = require('joi');
 
 
 const imageSchema = new mongoose.Schema({
@@ -30,12 +31,12 @@ const userInfo = new mongoose.Schema({
     firstName: { type: String, required: true, minlength: 1, maxlength: 15 },
     lastName: { type: String, required: true, minlength: 1, maxlength: 15 },
     email: { type: String, required: true, minlength: 1, unique: true },
-    userName: { type: String, required: true, minlength: 8, maxlength: 25, unique: true },
     password: { type: String, required: true, minlength: 8, maxlength: 32 },
     profileInfo: [profileData],
     likedPosts: {default: [], type: Array,},
     friends: {default: [], type: Array,},
-    friendRequests: {default: [], type: Array}
+    friendRequests: {default: [], type: Array},
+    date: { type: Date, default: Date.now}
 });
 
 
@@ -58,11 +59,11 @@ function validateUserInfo(userInfo) {
         firstName: Joi.string().min(1).max(15).required(),
         lastName: Joi.string().min(1).max(15).required(),
         email: Joi.string().min(1).required(),
-        userName: Joi.string().min(8).max(25).required(),
         password: Joi.string().min(8).max(32).required(),
         likedPost: Joi.array(),
         friends: Joi.array(),
-        friendRequests: Joi.array()
+        friendRequests: Joi.array(),
+        date: Joi.date(),
        
     });
     return schema.validate(userInfo);

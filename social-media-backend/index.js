@@ -2,27 +2,35 @@ const connectDB = require('./startup/db');
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const bodyParser = require("body-parser");
+const passport = require('passport');
 
 
-const userInfo = require('./routes/userInfos');
+const userInfo = require('./routes/userInfos');    
 
 connectDB();
-    
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: false
+    })
+);
+app.use(bodyParser.json);
+//Passport Middleware
+app.use(passport.initialize());
+//Pasport confing
+require("./config/passport") (passport);
+
 app.use('/api/userInfo', userInfo);
 
+
 const port = process.env.PORT || 5000;
+
 app.listen(port, () => {
     console.log(`Server started on port: ${port}`);
 });
-
-
-/* app.listen(3000, function () {
-    console.log("Server started. Listening on port 3000.");
-}); */
 
 app.get("/api/userInfo/:id", (req, res) => {
     let id = req.params.id;

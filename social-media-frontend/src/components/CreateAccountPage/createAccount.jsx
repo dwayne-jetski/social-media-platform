@@ -10,12 +10,6 @@ import axios from 'axios';
 function CreateAccount(props){    
 
     const register = () =>{
-        console.log("Email: ", values.email);
-        console.log("User Name: ", values.userName);
-        console.log('First Name: ', values.firstName);
-        console.log('Last Name: ', values.lastName);
-        console.log("Password: ", values.password);
-        console.log("Password Confirmation: ", values.confirmPassword);
 
         if(values.password === values.confirmPassword){
             alert(`Thanks for registering! Check your email ${values.email} for confirmation`);      
@@ -24,7 +18,6 @@ function CreateAccount(props){
                 firstName: values.firstName,
                 lastName: values.lastName,
                 email: values.email,
-                userName: values.userName,
                 password: values.password
             }
 
@@ -59,8 +52,6 @@ function CreateAccount(props){
                             <Form.Control type="lastName" placeholder="Enter last name" name="lastName" onChange={handleChange} value={values.lastName} required={true}/>
                             <Form.Label>Email Address</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleChange} value={values.email} required={true}/>
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control type="username" placeholder="Enter username" name="userName" onChange={handleChange} value={values.userName} required={true}/>
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" placeholder="Enter password 8-32 characters long" name="password" onChange={handleChange} value={values.password} required={true}/>
                             <Form.Label className={values.textColor}>Confirm Password</Form.Label>

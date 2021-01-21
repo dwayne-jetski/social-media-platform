@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 import {Col, Row} from 'react-bootstrap';
 import useForm from '../useForm/useForm';
+import axios from 'axios';
 
 
 
@@ -14,6 +15,14 @@ const LandingPage = (props) => {
     const login = () => {
 
         console.log('Email: ', values.email);
+
+        const loginCredentials = {
+            email: values.email,
+            password: values.password
+        }
+
+        axios.get('http://localhost:5000/api/userInfo/', loginCredentials)
+
         let password = true //will eventually be a statement to test whether or not the password works
         console.log('in')
         if(password === true){
