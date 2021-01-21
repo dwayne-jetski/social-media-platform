@@ -1,51 +1,45 @@
 .profile {
     display: flex;
     flex-direction: row;
-    margin-top: 6em;
-}
-
-.background {
-    background-image: linear-gradient(purple, darkblue);
-}
-
-.background_filler {
-    background: darkblue
-}
-
-.background_player {
-    background-image: linear-gradient(darkblue, purple)
-}
-
-.profile_card {
-    background-image: linear-gradient(darkblue, purple);
-    margin-left: 10em;
-    background-image: linear-gradient(purple, darkblue);
-    box-shadow: 2px 5px 10px black;
+    margin-top: 4em;
+    padding: 3em;
 }
 
 .text_color {
     color: white;
 }
 
-.btn-flat {
-    background-color: orange;
-    color: white;
+.background {
+    background-image: linear-gradient(purple, darkblue);
 }
 
 .list_items {
-    box-shadow: 2px 5px 10px black;
     color: white;
-    background-image: linear-gradient(to right, hotpink, violet, hotpink)
+    background-image: linear-gradient(to right, purple, hotpink, purple)
 }
 
 .bio {
-    height: 60%;
     box-shadow: 2px 5px 10px black;
+    margin-bottom: 2em;
+    padding: 1em;
 }
 
-.spotify {
-    padding: 3em;
+.center {
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.box_shadow{
+    box-shadow: 2px 5px 10px black; 
+}
+
+.button {
+    background-color: purple !important;
+    width: 95%;
+    transition: all;
+}
+
+.button:hover {
+    transform: scale(1.05);
 }
