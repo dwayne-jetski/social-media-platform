@@ -12,14 +12,8 @@ import MainPage from './components/mainPage/mainPage'
 
 function App() {
 
-  return(
-    <div>
-      <NavBar/>
-      <MainPage/>
-      <Footer className="Footer"></Footer>
-    </div>
-  )
-  /*const [ renderedPage, useRenderedPage ] = useState('landingPage')
+  
+  const [ renderedPage, useRenderedPage ] = useState('landingPage')
 
   console.log("app.js renderedPage",renderedPage)
 
@@ -83,7 +77,7 @@ function App() {
           <Footer/>
       </div>
     );
-  }*/
+  }
 }
 
 export default App;
