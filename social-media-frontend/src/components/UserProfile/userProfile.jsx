@@ -18,7 +18,7 @@ const UserProfile = () => {
                         <div className="container m-1 text_color">
                         <Card.Title>MUSICUSER17</Card.Title>
                         <Card.Text>
-                        I joined MusicApp to: blah blah blah
+                        Member since 2021
                         </Card.Text>
                         </div>
                         <br/>

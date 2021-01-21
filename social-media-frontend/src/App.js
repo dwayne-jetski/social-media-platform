@@ -7,11 +7,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/navBar/navBar'
 import UserProfile from './components/UserProfile/userProfile.jsx';
 import Footer from './components/Footer/Footer';
-import DisplayUsers from './components/DisplayUsers/DisplayUsers'
+import DisplayUsers from './components/DisplayUsers/DisplayUsers';
+import MainPage from './components/mainPage/mainPage'
 
 function App() {
 
-  const [ renderedPage, useRenderedPage ] = useState('landingPage')
+  return(
+    <div>
+      <NavBar/>
+      <MainPage/>
+      <Footer className="Footer"></Footer>
+    </div>
+  )
+  /*const [ renderedPage, useRenderedPage ] = useState('landingPage')
 
   console.log("app.js renderedPage",renderedPage)
 
@@ -75,7 +83,7 @@ function App() {
           <Footer/>
       </div>
     );
-  }
+  }*/
 }
 
 export default App;
