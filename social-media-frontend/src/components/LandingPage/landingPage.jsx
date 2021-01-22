@@ -36,7 +36,7 @@ const LandingPage = (props) => {
             //decode to get user data
             const decode = jwt_decode(token);
             props.useCurrentUser(decode);
-            console.log(props.currentUser);
+            console.log("123", props.currentUser);
         })
         .catch(err =>
             console.log(err));
