@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/navBar/navBar'
 import UserProfile from './components/UserProfile/userProfile.jsx';
 import Footer from './components/Footer/Footer';
-import DisplayUsers from './components/DisplayUsers/DisplayUsers'
+import DisplayUsers from './components/DisplayUsers/DisplayUsers';
+import MainPage from './components/mainPage/mainPage'
 
 function App() {
 

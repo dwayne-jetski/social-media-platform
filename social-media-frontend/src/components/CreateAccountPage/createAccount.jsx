@@ -58,7 +58,7 @@ function CreateAccount(props){
                             <Form.Label className={values.textColor}>Confirm Password</Form.Label>
                             <Form.Control type="password" placeholder="Confirm your password" name="password2" onChange={handleChange} value={values.password2} required={true}/>
                             <br/>
-                            <Button type="submit">Register</Button>
+                            <Button variant="outline-primary" type="submit">Register</Button>
                         </Form>
                     </Col>
                 </Col>

@@ -52,7 +52,7 @@ function NavBar(props){
                 <div>
                     <Form className="search" onSubmit={handleSubmit}>
                         <Form.Control type="text" placeholder="Search Users..." name="search" onChange={handleChange} value={values.search}></Form.Control>
-                        <Button type="Submit">Search</Button>
+                        <Button className="search-button" type="Submit">Search</Button>
                     </Form>
                 </div>
             </Navbar>

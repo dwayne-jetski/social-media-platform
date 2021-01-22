@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: row;
     margin-top: 4em;
+    margin-left: .5em;
 }
 
 .main-card {
-    margin-left: 10em;
     background-image: linear-gradient(purple, darkblue);
+    height: 100%;
 }
 
 .card-info {
@@ -23,15 +24,15 @@
 
 .drop-downs {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin-top: 2em;
 }
 
 .new_post {
-    margin-left: 10em;
-    margin-top: 1em;
+    margin-top: 10em;
+    padding: 1em;
 }
 
 footer {
@@ -39,4 +40,19 @@ footer {
     left:0;
     bottom:0;
     right:0;
+}
+
+.header {
+    background-color: darkblue !important;
+    color: white;
+}
+
+.post_button {
+    background-color: purple !important;
+    color: white;
+}
+
+.border {
+    box-shadow: 6px -2px 8px grey;
+    margin-bottom: 2em;
 }
