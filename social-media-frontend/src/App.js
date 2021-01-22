@@ -9,10 +9,13 @@ import UserProfile from './components/UserProfile/userProfile.jsx';
 import Footer from './components/Footer/Footer';
 import DisplayUsers from './components/DisplayUsers/DisplayUsers';
 import MainPage from './components/mainPage/mainPage'
+import { Provider } from 'react-redux';
 
 function App() {
 
-  const [ renderedPage, useRenderedPage ] = useState('landingPage')
+  const [ renderedPage, useRenderedPage ] = useState('landingPage');
+
+  const [ currentUser, useCurrentUser] = useState({});
 
   console.log("app.js renderedPage",renderedPage)
 
@@ -23,10 +26,14 @@ function App() {
           <NavBar 
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
+          useCurrentUser = {useCurrentUser}
+          currentUser = {currentUser}
           />
           <LandingPage 
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
+          useCurrentUser = {useCurrentUser}
+          currentUser = {currentUser}
           />
           <Footer/>
         </div>
@@ -38,10 +45,14 @@ function App() {
           <NavBar 
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
+          useCurrentUser = {useCurrentUser}
+          currentUser = {currentUser}
           />
           <CreateAccount
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
+          useCurrentUser = {useCurrentUser}
+          currentUser = {currentUser}
           />
           <Footer/>
       </div>
@@ -53,10 +64,14 @@ function App() {
           <NavBar 
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
+          useCurrentUser = {useCurrentUser}
+          currentUser = {currentUser}
           />
           <UserProfile
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
+          useCurrentUser = {useCurrentUser}
+          currentUser = {currentUser}
           />
           <Footer/>
       </div>
@@ -68,10 +83,14 @@ function App() {
           <NavBar 
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
+          useCurrentUser = {useCurrentUser}
+          currentUser = {currentUser}
           />
           <DisplayUsers
           renderedPage = {renderedPage}
           useRenderedPage = {useRenderedPage}
+          useCurrentUser = {useCurrentUser}
+          currentUser = {currentUser}
           />
           <Footer/>
       </div>

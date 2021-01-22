@@ -1,4 +1,6 @@
 import React, { useState, useEffect} from 'react';
+import setAuthToken from "../utils/setAuthToken";
+import jwt_decode from 'jwt-decode';
 import './landingPage.css';
 import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form';
@@ -21,14 +23,23 @@ const LandingPage = (props) => {
             password: values.password
         }
 
-        axios.get('http://localhost:5000/api/userInfo/login', loginCredentials)
+        console.log(loginCredentials);
 
-        let password = true //will eventually be a statement to test whether or not the password works
-        console.log('in')
-        if(password === true){
-            props.useRenderedPage('profilePage');
-            console.log('IN! renderPage: ', props.renderedPage);
-        };
+        axios.post('http://localhost:5000/api/userInfo/login', loginCredentials)
+        .then(res => {
+            
+            const { token } = res.data;
+            console.log(token);
+            localStorage.setItem('jwtToken', token);
+            //set token to Auth header
+            setAuthToken(token);
+            //decode to get user data
+            const decode = jwt_decode(token);
+            props.useCurrentUser(decode);
+            console.log(props.currentUser);
+        })
+        .catch(err =>
+            console.log(err));
 
     }
 

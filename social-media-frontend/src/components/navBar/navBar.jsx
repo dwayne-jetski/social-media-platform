@@ -15,9 +15,6 @@ import DisplayUsers from '../DisplayUsers/DisplayUsers';
 
 function NavBar(props){
 
-    const [ currentPage, setCurrentPage ] = useState('landingPage')
-
-
     const handleClick = (name) => {
         console.log(name);
         props.useRenderedPage(name);
