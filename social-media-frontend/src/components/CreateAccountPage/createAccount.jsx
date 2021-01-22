@@ -11,17 +11,18 @@ function CreateAccount(props){
 
     const register = () =>{
 
-        if(values.password === values.confirmPassword){
+        if(values.password === values.password2){
             alert(`Thanks for registering! Check your email ${values.email} for confirmation`);      
             
             const user = {
                 firstName: values.firstName,
                 lastName: values.lastName,
                 email: values.email,
-                password: values.password
+                password: values.password,
+                password2: values.password2
             }
 
-            axios.post('http://localhost:5000/api/userInfo/', user)
+            axios.post('http://localhost:5000/api/userInfo/register', user)
             .then(res => {
                 console.log(res);
             });
@@ -55,7 +56,7 @@ function CreateAccount(props){
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" placeholder="Enter password 8-32 characters long" name="password" onChange={handleChange} value={values.password} required={true}/>
                             <Form.Label className={values.textColor}>Confirm Password</Form.Label>
-                            <Form.Control type="password" placeholder="Confirm your password" name="confirmPassword" onChange={handleChange} value={values.confirmPassword} required={true}/>
+                            <Form.Control type="password" placeholder="Confirm your password" name="password2" onChange={handleChange} value={values.password2} required={true}/>
                             <br/>
                             <Button type="submit">Register</Button>
                         </Form>

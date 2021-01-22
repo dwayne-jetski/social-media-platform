@@ -21,7 +21,7 @@ const LandingPage = (props) => {
             password: values.password
         }
 
-        axios.get('http://localhost:5000/api/userInfo/', loginCredentials)
+        axios.get('http://localhost:5000/api/userInfo/login', loginCredentials)
 
         let password = true //will eventually be a statement to test whether or not the password works
         console.log('in')

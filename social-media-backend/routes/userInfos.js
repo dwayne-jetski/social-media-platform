@@ -8,11 +8,11 @@ const keys = require("../config/keys");
 const validateRegisterInput = require('../validators/register');
 const validateLoginInput = require('../validators/login');
 const { User } = require('../models/user'); //Not sure if needed
-const { UserInfo, validateUserInfo} = require('../models/userInfo');
+const { UserInfo, validateUserInfo } = require('../models/userInfo');
 const { ExtractJwt } = require('passport-jwt'); //not sure if needed
 
 
-// @route POST api/users/register
+// @route POST api/usersInfo/register
 // @desc Register user
 // @access Public
 router.post("/register", (req, res) => {
@@ -30,10 +30,10 @@ router.post("/register", (req, res) => {
             return res.status(400).json({email: "Email Already Exists"});
         } else {
             const newUser = new UserInfo ({
-                name: req.body.name,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
                 email: req.body.email,
                 password: req.body.password,
-                userName: req.body.userName
             });
 
             //Hash pasword before saving in database
@@ -51,7 +51,7 @@ router.post("/register", (req, res) => {
     });
 });
 
-// @route POST api/users/login
+// @route POST api/usersInfo/login
 // @desc Login user and return JWT token
 // @access Public
 router.post("/login", (req, res) => {
@@ -64,15 +64,17 @@ router.post("/login", (req, res) => {
         return res.status(400).json(errors);
     }
 
+    console.log(req.body.email);
     const email = req.body.email; 
-    const pasword = req.body.password;
+    console.log('email: ', email);
+    const password = req.body.password;
 
     // Find user by email
-    User.findOne({ email }).then(user => {
+    UserInfo.findOne({ email }).then(user => {
         //check if user exists
-        if(!user){
+        if (!user) {
             return res.status(404).json({ emailnotfound: "Email Not Found"});
-        };
+            }
 
         //check password
         bcrypt.compare(password, user.password).then(isMatch => {
@@ -80,8 +82,9 @@ router.post("/login", (req, res) => {
                 //User Matched
                 //Create JWT Payload
                 const payload = {
-                    is: user.id,
-                    name: user.name
+                    id: user.id,
+                    firstName: user.firstName,
+                    lastName: user.lastName
                 }
 
                 //sign token
