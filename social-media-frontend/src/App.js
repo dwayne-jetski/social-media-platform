@@ -15,7 +15,7 @@ function App() {
 
   const [ renderedPage, useRenderedPage ] = useState('landingPage');
 
-  const [ currentUser, useCurrentUser] = useState({});
+  const [ currentUser, useCurrentUser] = useState(null);
 
   console.log("app.js renderedPage",renderedPage)
 

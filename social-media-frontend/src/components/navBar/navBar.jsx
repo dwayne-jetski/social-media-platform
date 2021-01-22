@@ -24,6 +24,13 @@ function NavBar(props){
         console.log("Search Result: ", values.search);
         props.useRenderedPage('displayUsers');
     }
+    
+    const handleLogout = () => {
+        if (props.currentUer !== null)
+        console.log("Before: ", props.currentUser)
+        props.useCurrentUser(null)
+        console.log("After: ", props.currentUser);
+    }
 
 
     const { values, handleChange, handleSubmit, } = useForm(search)
@@ -48,9 +55,12 @@ function NavBar(props){
                 </div>
                 <div>
                     <Form className="search" onSubmit={handleSubmit}>
-                        <Form.Control type="text" placeholder="Search Users..." name="search" onChange={handleChange} value={values.search}></Form.Control>
+                        <Form.Control type="text" placeholder="Search Users..." name="search" onChange={()=>handleChange} value={values.search}></Form.Control>
                         <Button className="search-button" type="Submit">Search</Button>
                     </Form>
+                </div>
+                <div>
+                    <Button className="search-button" onClick={handleLogout}>Logout</Button>
                 </div>
             </Navbar>
         </React.Fragment>
