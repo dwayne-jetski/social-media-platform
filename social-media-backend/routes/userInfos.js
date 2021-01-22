@@ -64,9 +64,7 @@ router.post("/login", (req, res) => {
         return res.status(400).json(errors);
     }
 
-    console.log(req.body.email);
     const email = req.body.email; 
-    console.log('email: ', email);
     const password = req.body.password;
     
 
