@@ -68,6 +68,16 @@ const MainPage = () => {
                 </Card.Text>
                 <Button className="header">Like</Button>
             </Card.Body>
+            </div> 
+            <div className="border">
+            <Card.Header className="header">Post date/time</Card.Header>
+            <Card.Body>
+                <Card.Title>friend's name</Card.Title>
+                <Card.Text>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sunt asperiores, vero nisi quisquam in sapiente quos. Rerum eaque neque alias ea, pariatur rem fugit aperiam. Voluptas quos inventore voluptatem!
+                </Card.Text>
+                <Button className="header">Like</Button>
+            </Card.Body>
             </div>         
             </div>
         </div>
