@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from  'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
@@ -7,6 +7,15 @@ import Col from 'react-bootstrap/Col';
 import './userProfile.css';
 
 const UserProfile = () => {
+
+    const [firstName, setFirstName] = useState('Edward');
+    const [lastName, setLastName] = useState('Roberson');
+    const [firstGenre, setFirstGenre] = useState('RAP');
+    const [secondGenre, setSecondGenre] = useState('RnB');
+    const [thirdGenre, setThirdGenre] = useState('PUNK ROCK');
+    const [bio, setBio] = useState("This is my bio. my bio is all about me. I'll edit this to give others an idea of who I am and what i'm here for.");
+    const [playlist, setPlaylist] = useState("https://open.spotify.com/embed/album/52XjGg0uwOJBEqYY1DhKsU");
+
     return(
         <React.Fragment>  
             <Row className="profile background">
@@ -16,7 +25,7 @@ const UserProfile = () => {
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <div className="container m-1 text_color">
-                        <Card.Title>MUSICUSER17</Card.Title>
+                        <Card.Title>{firstName} {lastName}</Card.Title>
                         <Card.Text>
                         Member since 2021
                         </Card.Text>
@@ -24,10 +33,11 @@ const UserProfile = () => {
                         <br/>
                         <ListGroup variant="flush">
                             <Card.Title className="m-4 text_color">MUSICAL INTERESTS:</Card.Title>
-                            <ListGroup.Item className="list_items">Rap</ListGroup.Item>
-                            <ListGroup.Item className="list_items">RnB</ListGroup.Item>
-                            <ListGroup.Item className="list_items">Punk Rock</ListGroup.Item>
+                            <ListGroup.Item className="list_items">{firstGenre}</ListGroup.Item>
+                            <ListGroup.Item className="list_items">{secondGenre}</ListGroup.Item>
+                            <ListGroup.Item className="list_items">{thirdGenre}</ListGroup.Item>
                         </ListGroup>
+                        <Button className="edit">Edit Profile</Button>
                     </Card.Body>
                     </Card>
                 </Col>
@@ -39,12 +49,12 @@ const UserProfile = () => {
                             <Card.Header>ABOUT ME</Card.Header>
                             <Card.Body>
                                 <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente tempora labore beatae blanditiis ex id sed tenetur laudantium incidunt minus consequuntur nulla nihil provident magni, mollitia laboriosam eaque neque veniam!
+                                {bio}
                                 </Card.Text>
                                 <Card.Title>Check out my playlist:</Card.Title>
                             </Card.Body>
                             <div>
-                            <iframe src="https://open.spotify.com/embed/album/52XjGg0uwOJBEqYY1DhKsU" width="800" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            <iframe src={playlist} width="800" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                             </div>
                             <div>
                             <Button className="m-2 button">Add friend</Button>

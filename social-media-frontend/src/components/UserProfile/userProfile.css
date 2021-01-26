@@ -43,3 +43,8 @@
 .button:hover {
     transform: scale(1.05);
 }
+
+.edit {
+    background-color: transparent !important;
+    margin-top: .5em;
+}
