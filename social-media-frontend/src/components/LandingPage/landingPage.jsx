@@ -25,7 +25,7 @@ const LandingPage = (props) => {
 
         console.log(loginCredentials);
 
-        axios.post('http://localhost:5000/api/userInfo/login', loginCredentials)
+        axios.post('http://localhost:5000/api/users/login', loginCredentials)
         .then(res => {
             
             const { token } = res.data;
@@ -40,6 +40,13 @@ const LandingPage = (props) => {
         })
         .catch(err =>
             console.log(err));
+
+        /* 
+            UNCOMMENT THIS WHEN ED IS DONE WITH THE PROFILE PAGE! 
+            
+            if (props.currentUser !== null){
+            props.useRenderedPage('userPage');
+        } */
 
     }
 

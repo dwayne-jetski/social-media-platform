@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './userProfile.css';
+import './ProfilePic';
 
 const UserProfile = () => {
 
@@ -59,6 +60,7 @@ const UserProfile = () => {
                             <div>
                             <Button className="m-2 button">Add friend</Button>
                             <Button className="m-2 button">Remove friend</Button> 
+                            <Button className="m-2 button">Add Picture</Button>
                             </div>
                         </Card>
                     </Row>

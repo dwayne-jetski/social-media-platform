@@ -14,6 +14,7 @@ import { Provider } from 'react-redux';
 function App() {
 
   const [ renderedPage, useRenderedPage ] = useState('landingPage');
+  const [ getUsers, useGetUsers ] = useState(null);
 
   const [ currentUser, useCurrentUser] = useState(null);
 
@@ -91,6 +92,8 @@ function App() {
           useRenderedPage = {useRenderedPage}
           useCurrentUser = {useCurrentUser}
           currentUser = {currentUser}
+          getUsers = {getUsers}
+          useGetUsers = {useGetUsers}
           />
           <Footer/>
       </div>

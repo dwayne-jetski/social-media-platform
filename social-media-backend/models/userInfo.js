@@ -13,6 +13,16 @@ const imageSchema = new mongoose.Schema({
     }
 });
 
+const _changeImg = (e) => {
+    const file = e.target.files[0];
+    let encoded;
+    getBase64(file)
+      .then((result) => {
+        encoded = result;
+       })
+      .catch(e => console.log(e))
+}
+
 const newPost = new mongoose.Schema({
     body: {type: String, minlength: 1, maxlength: 240, required: true},
     likes: {type: Number, min: 0},
