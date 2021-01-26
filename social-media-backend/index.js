@@ -29,7 +29,7 @@ app.use(passport.initialize());
 require("./config/passport") (passport);
 
 //routes
-app.use('/api/userInfo', userInfo);
+app.use('/api/users', userInfo);
 
 
 const port = process.env.PORT || 5000;
@@ -37,28 +37,3 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`Server up and running on port: ${port} !`);
 });
-
-/* app.get("/api/userInfo/:id", (req, res) => {
-    let id = req.params.id;
-    let userInfo = repoContext.userInfo.findAllUserInfo();
-    res.send(userInfo);
-});
-
-app.post("/api/userInfo", (req, res) => {
-    let newUserInfo = req.body;
-    let addedUserInfo = repoContext.userInfo.createUserInfo(newUserInfo);
-    res.send(addedUserInfo);
-});
-
-app.put("/api/userInfo", (req, res) => {
-    let userInfoToUpdate = req.body;
-    let updatedUserInfo = repoContext.userInfo.updateUserInfo(userInfoToUpdate);
-    res.send(updatedUserInfo);
-});
-
-app.delete("/api/userInfo/:id", (req, res) => {
-    let id = req.params.id;
-    let updatedDataSet = repoContext.userInfo.deleteUserInfo(id);
-    res.send(updatedDataSet);
-});
- */

@@ -3,10 +3,10 @@ const Joi = require('joi');
 const CORS = require('cors');
 const config = require('config');
 const jwt = require('jsonwebtoken');
-const {commentSchema} = require('./comment');
+/* const {commentSchema} = require('./comment'); */
 /* const { productSchema } = require('./product'); */
 
-const userSchema = new mongoose.Schema({
+/* const userSchema = new mongoose.Schema({
     firstName: { type: String, required: true, minlength: 1, maxlength: 15 },
     lastName: { type: String, required: true, minlength: 1, maxlength: 15 },
     email: { type: String, required: true, minlength: 1, unique: true },
@@ -20,9 +20,9 @@ const userSchema = new mongoose.Schema({
 });
 userSchema.methods.generateAuthToken = function () {
     return jwt.sign({})
-};
+}; */
 
-const User = mongoose.model('User', userSchema);
+/* const User = mongoose.model('User', userSchema);
 function validateUser(user) {
     const schema = Joi.object({
         firstName: Joi.string().min(1).max(15).required(),
@@ -40,4 +40,4 @@ function validateUser(user) {
 
 exports.User = User;
 exports.validateUser = validateUser;
-exports.userSchema = userSchema;
+exports.userSchema = userSchema; */
