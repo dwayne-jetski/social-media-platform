@@ -1,57 +1,53 @@
 import React, { useRef } from "react";
 import ReactDom from "react-dom";
 
-function ProfilePic() {
-    const UploadedImage = useRef(null);
-    const ImageUploader = useRef(null);
 
-    const handleImageUpload = e => {
-        const [file] = e.target.files;
-        if (file) {
-          const reader = new FileReader();
-          const { current } = UploadedImage;
-          current.file = file;
-          reader.onload = e => {
-            current.src = e.target.result;
-          };
-          reader.readAsDataURL(file);
-        }
-      };
-    
-    
-      return (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center"
-          }}
-        >
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageUpload}
-            ref={ImageUploader}
-            style={{
-              display: "none"
-            }}
-          />
-          <div
-            onClick={() => ImageUploader.current.click()}
-          >
-            <img
-              ref={UploadedImage}
-              style={{
-                width: "100%",
-                height: "100%",
-                position: "absolute"
-              }}
-            />
-          </div>
-          Click to upload Image
-        </div>
-      );
+
+const ProfilePic = () => {
+
+
+    //user selects file
+  //file gets passed into function to upload
+  //file gets uploaded, stored on user object
+  //When profilePic component re-renders,
+
+
+  <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
+
+ 
+
+
+ function encodeImageFileAsURL() {
+
+    const filesSelected = document.getElementById("inputFileToLoad").files;
+    if (filesSelected.length > 0) {
+      const fileToLoad = filesSelected[0];
+
+      const fileReader = new FileReader();
+
+      fileReader.onload = function(fileLoadedEvent) {
+        const srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+        const newImage = document.createElement('img');
+        newImage.src = srcData;
+
+        document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+        alert("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+        console.log("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+      }
+      fileReader.readAsDataURL(fileToLoad);
     }
-    
-    export default ProfilePicture; 
+  }
+
+
+
+  return (
+    <div>
+
+      {/* If user has a profile pic, display it. If not, display button to trigger function to upload one */}
+    </div>
+  )
+
+} 
+
+export default ProfilePic
