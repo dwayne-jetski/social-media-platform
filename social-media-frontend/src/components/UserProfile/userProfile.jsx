@@ -27,7 +27,6 @@ const UserProfile = () => {
                 <Col>
                     <Card className="background box_shadow" style={{ width: '18rem' }}>
                     <Card.Img variant="top" src="https://img1.looper.com/img/gallery/what-you-need-to-know-about-the-adventure-time-revival/intro-1571945539.jpg"/>
-                    <Button className="m-2 button">Edit Photo</Button>
                     <Card.Body>
                         <div className="container m-1 text_color">
                         <Card.Title>{firstName} {lastName}</Card.Title>
@@ -42,7 +41,6 @@ const UserProfile = () => {
                             <ListGroup.Item className="list_items">{secondGenre}</ListGroup.Item>
                             <ListGroup.Item className="list_items">{thirdGenre}</ListGroup.Item>
                         </ListGroup>
-                        <Button className="edit">Edit Profile</Button>
                     </Card.Body>
                     </Card>
                 </Col>

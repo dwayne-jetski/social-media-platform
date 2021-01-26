@@ -27,10 +27,18 @@ function NavBar(props){
     }
     
     const handleLogout = () => {
-        if (props.currentUer !== null)
+
+        if(props.currentUser === null){
+            return
+        }
+        
+        if (props.currentUer !== null){
         console.log("Before: ", props.currentUser)
         props.useCurrentUser(null)
         console.log("After: ", props.currentUser);
+        props.useRenderedPage('landingPage')
+        }
+
     }
 
 
