@@ -54,7 +54,7 @@ function CreateAccount(props){
                             <Form.Label>Email Address</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleChange} value={values.email} required={true}/>
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Enter password 8-32 characters long" name="password" onChange={handleChange} value={values.password} required={true}/>
+                            <Form.Control type="password" placeholder="Enter password 6-30 characters long" name="password" onChange={handleChange} value={values.password} required={true}/>
                             <Form.Label className={values.textColor}>Confirm Password</Form.Label>
                             <Form.Control type="password" placeholder="Confirm your password" name="password2" onChange={handleChange} value={values.password2} required={true}/>
                             <br/>

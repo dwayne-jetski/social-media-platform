@@ -47,7 +47,7 @@ function DisplayUsers(props) {
                 return(
                     <Card className='card-background' id={_id}>
                         <Col>
-                            <Card.Img variant='left' className="image-size" src="https://target.scene7.com/is/image/Target/GUEST_86d532d8-e277-43af-b94f-466db495ccd4" roundCircle/>
+                            <Card.Img variant='left' className="image-size" src="https://wallpaperaccess.com/full/354030.jpg" roundCircle/>
                         </Col>
                         <Col>
                             <Card.Header>{firstName} {lastName}</Card.Header>
