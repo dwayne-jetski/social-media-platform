@@ -22,7 +22,7 @@ function CreateAccount(props){
                 password2: values.password2
             }
 
-            axios.post('http://localhost:5000/api/userInfo/register', user)
+            axios.post('http://localhost:5000/api/users/register', user)
             .then(res => {
                 console.log(res);
             });

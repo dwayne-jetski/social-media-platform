@@ -7,12 +7,13 @@ import Form from 'react-bootstrap/Form';
 import './mainPage.css'
 
 
-const MainPage = () => {
+const MainPage = (props) => {
     return(
         <div className="main">
             <div>
                 <Card className="main-card border" style={{ width: '18rem' }}>
                 <Card.Body className="">
+                    <h1 className="user-name">{props.currentUser.firstName} {props.currentUser.lastName}</h1>
                     <div className="drop-downs">
                         <DropdownButton variant="light" className="m-2 header" id="dropdown-item-button" title="Friends">
                         <Dropdown.Item as="button">friend 1</Dropdown.Item>

@@ -26,13 +26,11 @@ const LandingPage = (props) => {
         .then(res => {
             
             const { token } = res.data;
-            console.log(token);
             localStorage.setItem('jwtToken', token);
             //set token to Auth header
             setAuthToken(token);
             //decode to get user data
             props.useCurrentUser(jwt_decode(token));
-            console.log("123", props.currentUser);
         })
         .catch(err =>
             console.log(err));

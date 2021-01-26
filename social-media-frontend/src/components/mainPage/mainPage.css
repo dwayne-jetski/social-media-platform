@@ -5,6 +5,10 @@
     margin-left: .5em;
 }
 
+.user-name{
+    color: white
+}
+
 .main-card {
     background-image: linear-gradient(purple, darkblue);
     height: 50em;

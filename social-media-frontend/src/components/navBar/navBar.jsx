@@ -22,7 +22,6 @@ function NavBar(props){
     }
 
     const search = () =>{
-        console.log("Search Result: ", values.search);
         props.useRenderedPage('displayUsers');
     }
     
@@ -33,10 +32,8 @@ function NavBar(props){
         }
         
         if (props.currentUer !== null){
-        console.log("Before: ", props.currentUser)
         props.useCurrentUser(null)
         console.log("After: ", props.currentUser);
-        props.useRenderedPage('landingPage')
         }
 
     }
