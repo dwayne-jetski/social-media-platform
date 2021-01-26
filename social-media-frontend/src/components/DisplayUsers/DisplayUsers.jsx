@@ -13,6 +13,10 @@ import './DisplayUsers.css';
 
 function DisplayUsers(props) {
 
+    function handleClick(id){
+        console.log('added friend: ', id)
+    }
+
 
     function buildComments(){
         if(props.getUsers === null){
@@ -38,10 +42,10 @@ function DisplayUsers(props) {
             
             users = props.getUsers.map((usersList)=>{
 
-                const { id, firstName, lastName } = usersList;
+                const { _id, firstName, lastName } = usersList;
 
                 return(
-                    <Card className='card-background' id={id}>
+                    <Card className='card-background' id={_id}>
                         <Col>
                             <Card.Img variant='left' className="image-size" src="https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/31445027_1351262364973978_1562260608361955328_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=xeMMpwJ5Ae4AX8S6-wJ&_nc_ht=scontent-ort2-1.xx&oh=9851c643836c864e1eced194d50b9421&oe=602DA833" roundCircle/>
                         </Col>
@@ -49,7 +53,7 @@ function DisplayUsers(props) {
                             <Card.Header>{firstName} {lastName}</Card.Header>
                         </Col>
                         <Col>
-                            <Button variant="outline-primary">Add Friend</Button>
+                            <Button variant="outline-primary" id={_id} onClick={()=>handleClick(_id)}>Add Friend</Button>
                         </Col>
                     </Card>
                 )

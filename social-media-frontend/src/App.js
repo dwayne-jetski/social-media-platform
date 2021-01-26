@@ -98,6 +98,27 @@ function App() {
           <Footer/>
       </div>
     );
+  } else if (renderedPage === 'mainPage'){
+      console.log("WORKED!: ",renderedPage)
+      return (
+        <div className="App">
+            <NavBar 
+            renderedPage = {renderedPage}
+            useRenderedPage = {useRenderedPage}
+            useCurrentUser = {useCurrentUser}
+            currentUser = {currentUser}
+            />
+            <MainPage
+            renderedPage = {renderedPage}
+            useRenderedPage = {useRenderedPage}
+            useCurrentUser = {useCurrentUser}
+            currentUser = {currentUser}
+            getUsers = {getUsers}
+            useGetUsers = {useGetUsers}
+            />
+            <Footer/>
+        </div>
+      );
   }
 }
 
