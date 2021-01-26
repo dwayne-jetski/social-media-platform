@@ -9,6 +9,8 @@ import ProfilePic from '../ProfilePic/ProfilePic';
 
 const UserProfile = () => {
 
+    const [isInputActive, setIsInputActive] = useState(false);
+    const [inputValue, setInputValue] = useState("");
     const [firstName, setFirstName] = useState('Edward');
     const [lastName, setLastName] = useState('Roberson');
     const [firstGenre, setFirstGenre] = useState('RAP');
@@ -24,7 +26,8 @@ const UserProfile = () => {
                 <Col xs={1}></Col>
                 <Col>
                     <Card className="background box_shadow" style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Img variant="top" src="https://img1.looper.com/img/gallery/what-you-need-to-know-about-the-adventure-time-revival/intro-1571945539.jpg"/>
+                    <Button className="m-2 button">Edit Photo</Button>
                     <Card.Body>
                         <div className="container m-1 text_color">
                         <Card.Title>{firstName} {lastName}</Card.Title>
@@ -61,7 +64,6 @@ const UserProfile = () => {
                             <div>
                             <Button className="m-2 button">Add friend</Button>
                             <Button className="m-2 button">Remove friend</Button> 
-                            <Button className="m-2 button">Add Picture</Button>
                             </div>
                         </Card>
                     </Row>

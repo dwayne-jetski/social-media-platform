@@ -14,16 +14,13 @@ import axios from 'axios';
 
 const LandingPage = (props) => {
 
-    const login = () => {
-
-        console.log('Email: ', values.email);
+    function login() {
 
         const loginCredentials = {
             email: values.email,
             password: values.password
         }
 
-        console.log(loginCredentials);
 
         axios.post('http://localhost:5000/api/users/login', loginCredentials)
         .then(res => {
@@ -34,19 +31,18 @@ const LandingPage = (props) => {
             //set token to Auth header
             setAuthToken(token);
             //decode to get user data
-            const decode = jwt_decode(token);
-            props.useCurrentUser(decode);
+            props.useCurrentUser(jwt_decode(token));
             console.log("123", props.currentUser);
         })
         .catch(err =>
             console.log(err));
 
-        /* 
-            UNCOMMENT THIS WHEN ED IS DONE WITH THE PROFILE PAGE! 
-            
-            if (props.currentUser !== null){
-            props.useRenderedPage('userPage');
-        } */
+        if(props.currentUser !== null){
+
+            props.useRenderedPage('mainPage');
+
+        }
+        
 
     }
 
