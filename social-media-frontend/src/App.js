@@ -20,25 +20,47 @@ function App() {
 
   console.log("app.js renderedPage",renderedPage)
 
-  if(renderedPage === 'landingPage'){
-    console.log("WORKED!: ",renderedPage)
-    return (
-      <div className="App">
-          <NavBar 
-          renderedPage = {renderedPage}
-          useRenderedPage = {useRenderedPage}
-          useCurrentUser = {useCurrentUser}
-          currentUser = {currentUser}
-          />
-          <LandingPage 
-          renderedPage = {renderedPage}
-          useRenderedPage = {useRenderedPage}
-          useCurrentUser = {useCurrentUser}
-          currentUser = {currentUser}
-          />
-          <Footer/>
-        </div>
-    );
+  if(renderedPage === 'landingPage' || renderedPage === 'mainPage'){
+
+    if(currentUser !== null){
+        return (
+          <div className="App">
+              <NavBar 
+              renderedPage = {renderedPage}
+              useRenderedPage = {useRenderedPage}
+              useCurrentUser = {useCurrentUser}
+              currentUser = {currentUser}
+              />
+              <MainPage
+              renderedPage = {renderedPage}
+              useRenderedPage = {useRenderedPage}
+              useCurrentUser = {useCurrentUser}
+              currentUser = {currentUser}
+              getUsers = {getUsers}
+              useGetUsers = {useGetUsers}
+              />
+              <Footer/>
+          </div>            
+        )
+      } else { 
+        return (
+        <div className="App">
+            <NavBar 
+            renderedPage = {renderedPage}
+            useRenderedPage = {useRenderedPage}
+            useCurrentUser = {useCurrentUser}
+            currentUser = {currentUser}
+            />
+            <LandingPage 
+            renderedPage = {renderedPage}
+            useRenderedPage = {useRenderedPage}
+            useCurrentUser = {useCurrentUser}
+            currentUser = {currentUser}
+            />
+            <Footer/>
+          </div>
+          );
+  }
   } else if (renderedPage === 'createAccount') {
     console.log("WORKED!: ",renderedPage)
     return (

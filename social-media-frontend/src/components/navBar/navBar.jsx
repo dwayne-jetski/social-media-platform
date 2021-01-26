@@ -56,7 +56,7 @@ function NavBar(props){
                 </div>
                 <div>
                     <Form className="search" onSubmit={handleSubmit}>
-                        <Button className="search-button" type="Submit">Get users</Button>
+                        <Button className="search-button" type="Submit">See Other Users</Button>
                     </Form>
                 </div>
                 <div>
