@@ -10,6 +10,7 @@ import useForm from '../useForm/useForm';
 import NavLink from 'react-bootstrap/NavLink';
 import './navBar.css';
 import DisplayUsers from '../DisplayUsers/DisplayUsers';
+import axios from 'axios';
 
 
 
@@ -55,8 +56,7 @@ function NavBar(props){
                 </div>
                 <div>
                     <Form className="search" onSubmit={handleSubmit}>
-                        <Form.Control type="text" placeholder="Search Users..." name="search" onChange={()=>handleChange} value={values.search}></Form.Control>
-                        <Button className="search-button" type="Submit">Search</Button>
+                        <Button className="search-button" type="Submit">Get users</Button>
                     </Form>
                 </div>
                 <div>
