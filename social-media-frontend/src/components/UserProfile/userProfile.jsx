@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './userProfile.css';
-import './ProfilePic';
+import ProfilePic from '../ProfilePic/ProfilePic';
 
 const UserProfile = () => {
 
@@ -16,6 +16,7 @@ const UserProfile = () => {
     const [thirdGenre, setThirdGenre] = useState('PUNK ROCK');
     const [bio, setBio] = useState("This is my bio. my bio is all about me. I'll edit this to give others an idea of who I am and what i'm here for.");
     const [playlist, setPlaylist] = useState("https://open.spotify.com/embed/album/52XjGg0uwOJBEqYY1DhKsU");
+    const [ id, setId] = useState('1')
 
     return(
         <React.Fragment>  
@@ -55,7 +56,7 @@ const UserProfile = () => {
                                 <Card.Title>Check out my playlist:</Card.Title>
                             </Card.Body>
                             <div>
-                            <iframe src={playlist} width="800" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            <iframe title={id} src={playlist} width="800" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                             </div>
                             <div>
                             <Button className="m-2 button">Add friend</Button>
