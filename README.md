@@ -1,3 +1,8 @@
+# Social-Media-App
+
+# description
+the beginning of a music oriented social media app. This was a group project between me and two others in my devCodeCamp class. We didn't end up finishing it by the desired time, however I  (Marcus) ended up putting in most of the work on this. I re-wrote most of the backend, implemented JWT and set up creating an account and logging in on the front end, as well as getting the functionality on most of the front end set up myself.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
